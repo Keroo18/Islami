@@ -1,9 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../core/services/settings_provider.dart';
 import '../layout_view/layout_view.dart';
 
 class SplashView extends StatefulWidget {
+
   static const String routeName = "/";
   const SplashView({super.key});
 
@@ -12,10 +16,11 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  ThemeMode currentThemeMode=ThemeMode.dark;
+
 
   @override
   void initState() {
+
     // TODO: implement initState
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, LayoutView.routeName);
@@ -25,27 +30,30 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
 
-      return currentThemeMode==ThemeMode.dark?
-      Image.asset(
-        "assets/images/splash.png",
-        fit: BoxFit.cover,
-      )
-          :
-      Stack(
-        fit: StackFit.passthrough,
-        children: [
-          Image.asset(
-            "assets/images/bg.png",
-          ),
-          Center(
-            child: Image.asset(
-              "assets/images/logo.png",
-
+      return Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Spacer(flex: 5,),
+            Center(
+              child: Image.asset(
+                "assets/images/logo.png",
+                width: MediaQuery.of(context).size.width*.6,
+              ),
             ),
-          ),
-        ],
-      );
+            Spacer(flex: 4,),
+            Text("Created By Kerlos Samir",
+            style: TextStyle(
+              color: Color(0xFFFACC1D),
 
+            ),),
+            Spacer(flex: 1,),
+
+
+          ],
+        ),
+
+      );
 
   }
 }

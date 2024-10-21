@@ -6,7 +6,7 @@ import 'dart:math';
 
 import 'package:provider/provider.dart';
 
-import '../../core/settings_provider.dart';
+import '../../core/services/settings_provider.dart';
 
 
 class SebhaView extends StatefulWidget {

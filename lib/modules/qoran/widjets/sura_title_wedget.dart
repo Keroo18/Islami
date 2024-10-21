@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_r/modules/qoran/qoran_view.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/settings_provider.dart';
+import '../../../core/services/settings_provider.dart';
 
 class SuraTitleWedget extends StatelessWidget {
   final SuraData data;

@@ -2,8 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:animated_custom_dropdown/custom_dropdown.dart';
-import 'package:islami_r/core/settings_provider.dart';
+import 'package:islami_r/core/services/settings_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
  class SettingsView extends StatefulWidget {
 
   const SettingsView({super.key});
@@ -15,17 +17,19 @@ import 'package:provider/provider.dart';
 class _SettingsViewState extends State<SettingsView> {
   var langList=[
     "English",
-    "عربي",
+    "العربية",
   ];
 
-  var themeList=[
-    "Dark",
-    "Light",
-  ];
 
   @override
   Widget build(BuildContext context) {
     var theme=Theme.of(context);
+    var lang= AppLocalizations.of(context)!;
+    var themeList=[
+      lang.dark,
+      lang.light,
+    ];
+
     var provider=Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
@@ -33,7 +37,7 @@ class _SettingsViewState extends State<SettingsView> {
         children: [
           const SizedBox(height: 40,),
 
-        Text('Language',
+        Text(lang.language,
         style: theme.textTheme.titleLarge,),
       const SizedBox(height: 20,),
       CustomDropdown<String>(
@@ -44,14 +48,14 @@ class _SettingsViewState extends State<SettingsView> {
           if(value=="English"){
             provider.changeLangCode("en");
           }
-          if(value=="عربي"){
+          if(value=="العربية"){
             provider.changeLangCode("ar");
           }
           log('changing value to: $value');
         },
       ),
         SizedBox(height: 40,),
-        Text('Theme',
+        Text(lang.theme,
       style: theme.textTheme.titleLarge,),
     const SizedBox(height: 20,),
     CustomDropdown<String>(
@@ -61,10 +65,10 @@ class _SettingsViewState extends State<SettingsView> {
     themeList[0]
       :themeList[1],
     onChanged: (value) {
-      if (value=="Dark"){
+      if (value==lang.dark){
         provider.changeThemeMode(ThemeMode.dark);
       }
-      if (value=="Light"){
+      if (value==lang.light){
         provider.changeThemeMode(ThemeMode.light);
       }
       log('changing value to: $value');

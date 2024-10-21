@@ -3,7 +3,7 @@ import 'package:islami_r/modules/qoran/sura_view.dart';
 import 'package:islami_r/modules/qoran/widjets/sura_title_wedget.dart';
 import 'package:provider/provider.dart';
 
-import '../../core/settings_provider.dart';
+import '../../core/services/settings_provider.dart';
 
 class QoranView extends StatelessWidget {
   QoranView({super.key});

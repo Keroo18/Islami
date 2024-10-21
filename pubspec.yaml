@@ -9,10 +9,19 @@ environment:
 
 
 dependencies:
-  provider: ^6.1.2
-  animated_custom_dropdown: 3.1.1
+
   flutter:
     sdk: flutter
+
+  dio:
+  dartz:
+  provider: ^6.1.2
+  animated_custom_dropdown: 3.1.1
+  audioplayers:
+  shared_preferences: ^2.3.2
+
+
+
 
   flutter_localizations:
     sdk: flutter
@@ -25,6 +34,13 @@ dependencies:
   cupertino_icons: ^1.0.6
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.1
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
+
+
   flutter_test:
     sdk: flutter
 

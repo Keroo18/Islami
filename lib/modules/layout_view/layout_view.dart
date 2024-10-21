@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_r/core/settings_provider.dart';
+import 'package:islami_r/core/services/settings_provider.dart';
 import 'package:islami_r/modules/hadeth/hadeth_view.dart';
 import 'package:islami_r/modules/qoran/qoran_view.dart';
 import 'package:islami_r/modules/radio/radio_view.dart';
@@ -49,7 +49,6 @@ class _LayoutViewState extends State<LayoutView> {
           ),
         ),
         body: screenList[selectedIndex],
-
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedIndex,
           onTap:(value){

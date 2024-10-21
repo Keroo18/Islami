@@ -4,7 +4,9 @@
 "hadith":"Hadith",
 "sebha":"Sebha",
 "radio":"Radio",
-"settings":"Settings"
-
-
+"settings":"Settings",
+"language":"Language",
+"theme":"Theme",
+"light":"Light",
+"dark":"Dark"
 }

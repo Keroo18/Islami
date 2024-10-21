@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:islami_r/core/settings_provider.dart';
-import 'package:islami_r/modules/hadeth/hadith_detail_view.dart';
-import 'package:islami_r/modules/layout_view/layout_view.dart';
-import 'package:islami_r/modules/qoran/sura_view.dart';
-import 'package:islami_r/modules/splash/splash_view.dart';
+
 import 'core/application_theme_management.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+
+import 'core/services/settings_provider.dart';
+import 'modules/hadeth/hadith_detail_view.dart';
+import 'modules/layout_view/layout_view.dart';
+import 'modules/qoran/sura_view.dart';
+import 'modules/splash/splash_view.dart';
+
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  var provider=SettingsProvider();
+  await provider.loudSettings();
   runApp(
       ChangeNotifierProvider(
-        create: (context) => SettingsProvider(),
-          child: Islami()
+        create: (context) => provider,
+          child: const Islami(),
       )
   );
 }

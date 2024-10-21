@@ -4,7 +4,9 @@
 "hadith":"حديث",
 "sebha":"سبحة",
 "radio":"راديو",
-"settings":"اعدادات"
-
-
+"settings":"اعدادات",
+"language":"اللغة",
+"theme":"السمات",
+"light":"نهارى",
+"dark":"ليلي"
 }
